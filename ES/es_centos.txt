@@ -1,0 +1,186 @@
+
+BasePath=/opt
+SoftwareRepo=/opt/software
+mkdir -p ${SoftwareRepo}
+
+ZipFileName=elasticsearch-1.1.0.tar.gz
+RepFilePath=${SoftwareRepo}/${ZipFileName}
+
+DownLoadUrl=https://download.elasticsearch.org/elasticsearch/elasticsearch/${ZipFileName}
+
+
+
+if [ ! -f "$RepFilePath" ]; then
+	echo "file not found,download from web."
+	cd ${SoftwareRepo}
+	wget_result=$(wget ${DownLoadUrl})
+	if [ $? -ne 0 ]
+	then 
+		echo "Download fail"
+		exit
+	else
+		echo "Download success"
+		#mv ${ZipFileName} ${SoftwareRepo}
+	fi
+fi
+
+
+ElasticSearch安装
+下载地址：
+http://www.elasticsearch.org/overview/elkdownloads/
+我选择的是：版本号 1.1.0
+https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.0.tar.gz
+参考文档：
+http://www.elasticsearch.org/guide/
+ 
+tar -zvxf elasticsearch-1.1.0.tar.gz
+ 
+1安装marvel插件
+插件作用： 监测系统的运行情况，比如索引，CPU,内存占用。
+./bin/plugin -i elasticsearch/marvel/latest
+然后修改config/elasticsearch.yml文件
+marvel.agent.enabled: true
+marvel.agent.indices: _all
+marvel.agent.interval: 10s
+marvel.agent.shard_stats.enabled: true
+打开：
+http://192.168.56.200:9200/_plugin/marvel/
+ 
+2安装kopf插件
+官网：https://github.com/lmenezes/elasticsearch-kopf
+这个网址里面详细说明了版本的选择，安装及使用方法
+ 
+安装时不需要源码，直接用命令即可。
+./bin/plugin --install lmenezes/elasticsearch-kopf/{version}
+这里的version我填的是1.1，也就是执行下面的命令
+./bin/plugin --install lmenezes/elasticsearch-kopf/1.1
+然后重启es,再打开下面的网址就可以：
+http://IP:9200/_plugin/kopf/
+3安装head插件
+ 
+官网地址： https://github.com/mobz/elasticsearch-head
+安装：
+./bin/plugin -install mobz/elasticsearch-head
+然后访问：
+http://IP:9200/_plugin/head/
+ 
+ 
+ 
+4安装mmseg插件[成功]
+版本号： 1.2.2
+ 
+各种学习文档：
+http://article.yeeyan.org/view/207217/346223
+http://www.360doc.com/content/13/0217/15/11619026_266141425.shtml
+http://code.google.com/p/mmseg4j/
+ 
+http://chtsai.org/index_tw.html
+http://code.google.com/p/mmseg4j/downloads/list
+http://chenlb.iteye.com/
+http://zhousheng29.iteye.com/blog/1849536
+http://www.iteye.com/news/9637
+http://www.chepoo.com/elasticsearch-analysis-mmseg-install.html
+http://www.blogjava.net/ivanwan/archive/2013/10/04/404680.html
+http://blog.csdn.net/feelig/article/details/8640838
+ 
+ 
+ 
+最终版下载地址：
+https://github.com/medcl----------------------------------------------！！！！
+https://github.com/medcl/elasticsearch-analysis-mmseg----------！！！
+ 
+ 
+ 
+ 
+安装步骤：
+下载elasticsearch-rtf版本
+网址[这个是速度很慢滴]：
+https://github.com/medcl/elasticsearch-rtf
+https://github.com/medcl/elasticsearch-rtf/archive/master.zip
+ 
+直接从云盘下载：
+http://pan.baidu.com/s/1pJNkrUV
+解压缩此文件
+unzip elasticsearch-rtf.zip
+ 
+复制jar文件
+以我的为例
+cp -rf ./elasticsearch-rtf/plugins/analysis-mmseg/ ./elasticsearch-1.1.0/plugins/
+ 
+复制dic文件
+cp -rf ./elasticsearch-rtf/config/mmseg/ ./elasticsearch-1.1.0/config
+ 
+ 
+5)修改分词器为mmseg
+修改config/elasticsearch.yml
+添加
+index:
+  analysis:
+    analyzer:
+      mmseg:
+          alias: [news_analyzer, mmseg_analyzer]
+          type: org.elasticsearch.index.analysis.MMsegAnalyzerProvider
+index.analysis.analyzer.default.type : "mmseg"
+再添加点定制化的配置：
+index:
+  analysis:
+    tokenizer:
+      mmseg_maxword:
+          type: mmseg
+          seg_type: "max_word"
+      mmseg_complex:
+          type: mmseg
+          seg_type: "complex"
+      mmseg_simple:
+          type: mmseg
+          seg_type: "simple"
+至此，mmseg就安装完毕。
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5安装mongodb-river插件[成功]
+官网：
+https://github.com/richardwilly98/elasticsearch-river-mongodb/
+https://github.com/elasticsearch/elasticsearch-mapper-attachments
+ 
+ 
+执行 
+./bin/plugin -install elasticsearch/elasticsearch-mapper-attachments/2.0.0 
+ 
+2） 
+./bin/plugin --install com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb/2.0.0
+ 
+6安装mysql插件[成功]
+https://github.com/jprante/elasticsearch-river-jdbc
+ 
+./bin/plugin --install river-mysql
+--url http://xbib.org/repository/org/xbib/elasticsearch/plugin/elasticsearch-river-jdbc/1.1.0.2/elasticsearch-river-jdbc-1.1.0.2-plugin.zip
+ 
+启动路径：
+/usr/local/elasticsearch-1.2.1/bin/elasticsearch  -d 
+ 
+然后访问，比如自己的网址：
+http://192.168.56.200:9200/_plugin/marvel/     根据实际情况修改自己的IP
+ 
+查看集群健康状况：
+curl http://localhost:9200/_cluster/health?pretty
+{
+  "cluster_name" : "elasticsearch",
+  "status" : "yellow",
+  "timed_out" : false,
+  "number_of_nodes" : 1,
+  "number_of_data_nodes" : 1,
+  "active_primary_shards" : 2,
+  "active_shards" : 2,
+  "relocating_shards" : 0,
+  "initializing_shards" : 0,
+  "unassigned_shards" : 2
+}
