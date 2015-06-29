@@ -7,9 +7,10 @@
 # $GRADLE_HOME points to latest *installed* (not released)
 gradle_version=1.11
 wget -N http://services.gradle.org/distributions/gradle-${gradle_version}-all.zip
-sudo unzip -foq gradle-${gradle_version}-all.zip -d /opt/gradle
-sudo ln -sfn gradle-${gradle_version} /opt/gradle/latest
-sudo printf "export GRADLE_HOME=/opt/gradle/latest\nexport PATH=\$PATH:\$GRADLE_HOME/bin" > /etc/profile.d/gradle.sh
+unzip gradle-${gradle_version}-all.zip -d /opt
+gradle_path=/opt/gradle-${gradle_version}
+sudo ln -sfn gradle-${gradle_version} ${gradle_path}
+sudo printf "export GRADLE_HOME=${gradle_path}\nexport PATH=\$PATH:\$GRADLE_HOME/bin" > /etc/profile.d/gradle.sh
 . /etc/profile.d/gradle.sh
 # check installation
 gradle -v

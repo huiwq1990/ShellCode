@@ -1,0 +1,13 @@
+Linux根据端口查进程信息Shell命令
+ 2012/01/04 shell, 端口, 进程 编程语言 评论 3,104
+ps -ef|awk '{print $2"t"$8$9}'|grep `netstat -tlnp|grep 80|awk '{print $7}'|awk -F '/' '{print $1}'`
+几个示例：
+
+[root@MyVPS2524 ~]# ps -ef|awk '{print $2"t"$8$9}'|grep `netstat -tlnp|grep 80|awk '{print $7}'|awk -F '/' '{print $1}'`
+
+1700    Nginx:master
+[root@MyVPS2524 ~]# ps -ef|awk '{print $2"t"$8$9}'|grep `netstat -tlnp|grep 22|awk '{print $7}'|awk -F '/' '{print $1}'`  
+
+1395    /usr/sbin/sshd
+
+25463   grep1395

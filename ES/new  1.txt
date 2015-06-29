@@ -1,0 +1,2 @@
+./bin/plugin --install river-mysql --url http://xbib.org/repository/org/xbib/elasticsearch/plugin/elasticsearch-river-jdbc/1.1.2.4/elasticsearch-river-jdbc-1.1.2.4-plugin.zip
+ 
