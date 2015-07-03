@@ -2,12 +2,12 @@ BasePath=/opt
 SoftwareRepo=/opt/software
 mkdir -p ${SoftwareRepo}
 
-ZipFileName=apache-tomcat-7.0.62.tar.gz
+ZipFileName=apache-maven-3.3.3-bin.tar.gz
 RepFilePath=${SoftwareRepo}/${ZipFileName}
 
-InstallFolderPath=/opt/apache-tomcat-7.0.62
+InstallFolderPath=/opt/apache-maven-3.3.3
 
-DownLoadUrl=http://mirrors.hust.edu.cn/apache/tomcat/tomcat-7/v7.0.62/bin/${ZipFileName}
+DownLoadUrl=http://apache.fayea.com/maven/maven-3/3.3.3/binaries/${ZipFileName}
 
 
 
@@ -30,14 +30,21 @@ cd ${BasePath}
 tar -zxf ${RepFilePath} -C ${BasePath}
 
 
-cat>/etc/profile.d/tomcat.sh<<EOF
+
+##设置环境变量
+
+
+cat>/etc/profile.d/maven.sh<<EOF
 #!/bin/bash
-Tomcat_HOME=${InstallFolderPath}
+MVN_HOME=${InstallFolderPath}
 #防止输出变量值
-PATH=\$Tomcat_HOME/bin:\$PATH
-export PATH Tomcat_HOME
+PATH=\$MVN_HOME/bin:\$PATH
+export PATH MVN_HOME
 export CLASSPATH=.
 EOF
 
-chmod +x /etc/profile.d/tomcat.sh
-source /etc/profile.d/tomcat.sh
+chmod +x /etc/profile.d/maven.sh
+source /etc/profile.d/maven.sh
+source /etc/profile
+
+mvn -version  
