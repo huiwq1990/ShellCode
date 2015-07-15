@@ -1,7 +1,7 @@
 #http://rensanning.iteye.com/blog/2193036
 
 
-BasePath=/opt
+BasePath=/opt/program
 SoftwareRepo=/opt/software
 mkdir -p ${SoftwareRepo}
 
