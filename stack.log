@@ -1,0 +1,1554 @@
+2015-07-16 15:40:36
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (17.1-b03 mixed mode):
+
+"ActiveMQ Session Task-1467" prio=10 tid=0x00007f436800f800 nid=0x379 waiting on condition [0x00007f4364dcc000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470104340> (a java.util.concurrent.SynchronousQueue$TransferStack)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Attach Listener" daemon prio=10 tid=0x00007f4430010800 nid=0x373 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"ActiveMQ Session Task-1466" prio=10 tid=0x00007f436800b000 nid=0x338 waiting on condition [0x00007f43652d1000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470104340> (a java.util.concurrent.SynchronousQueue$TransferStack)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"InactivityMonitor Async Task: java.util.concurrent.ThreadPoolExecutor$Worker@71ff5490" daemon prio=10 tid=0x00000000416dd000 nid=0x2ec waiting on condition [0x00007f43650cf000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470018a38> (a java.util.concurrent.SynchronousQueue$TransferStack)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"ActiveMQ Transport: tcp:///10.6.155.205:61616" prio=10 tid=0x00007f43b400b800 nid=0x5302 runnable [0x00007f4364ecd000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:602)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:587)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:229)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:204)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-10" prio=10 tid=0x00007f43b4008800 nid=0x4446 in Object.wait() [0x00007f43653d2000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f447069d6a8> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-9" prio=10 tid=0x00007f444c011000 nid=0x3c28 in Object.wait() [0x00007f4364fce000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f4470674de0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-8" prio=10 tid=0x00007f437c008800 nid=0x3231 in Object.wait() [0x00007f4366ae9000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f447062e0d8> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-7" prio=10 tid=0x00007f4398007800 nid=0x311f in Object.wait() [0x00007f4365ddc000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f447062bb38> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-6" prio=10 tid=0x00007f43a0001800 nid=0x3106 in Object.wait() [0x00007f43654d3000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f4470627828> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-16" prio=10 tid=0x00007f437003b800 nid=0x303f waiting on condition [0x00007f43655d4000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at com.travelsky.msky.msg.util.timerevent.DBHelper$1.run(DBHelper.java:39)
+
+"MultiThreadedHttpConnectionManager cleanup" daemon prio=10 tid=0x00007f437003d800 nid=0x302d in Object.wait() [0x00007f43656d5000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00007f446fe531f8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x00007f446fe531f8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$ReferenceQueueThread.run(MultiThreadedHttpConnectionManager.java:1110)
+
+"listenerContainerMsgMain-20" prio=10 tid=0x00007f4388011000 nid=0x301f in Object.wait() [0x00007f43657d6000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f447059aa90> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-19" prio=10 tid=0x00007f438c004800 nid=0x301e in Object.wait() [0x00007f43658d7000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f447058c538> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-18" prio=10 tid=0x00007f4380012000 nid=0x301d in Object.wait() [0x00007f43659d8000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f447058d890> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-17" prio=10 tid=0x00007f4384005800 nid=0x301b in Object.wait() [0x00007f4365ad9000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f447058ec98> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-16" prio=10 tid=0x00007f437400c800 nid=0x3019 in Object.wait() [0x00007f4365bda000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44705900a0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-15" prio=10 tid=0x00007f437803e800 nid=0x3018 in Object.wait() [0x00007f43ce9e8000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44704c10f0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-14" prio=10 tid=0x00007f436c017800 nid=0x3012 in Object.wait() [0x00007f4365cdb000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44704c4188> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-13" prio=10 tid=0x00007f437002c000 nid=0x3010 in Object.wait() [0x00007f43ce7e6000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44704c2918> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-12" prio=10 tid=0x00007f436c006800 nid=0x3004 in Object.wait() [0x00007f4365edd000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701bafd0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"ActiveMQ Transport: tcp:///10.6.155.205:61616" prio=10 tid=0x00007f4374025800 nid=0x3003 runnable [0x00007f4365fde000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:602)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:587)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:229)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:204)
+	at java.lang.Thread.run(Thread.java:662)
+
+"ActiveMQ Transport: tcp:///10.6.155.205:61616" prio=10 tid=0x00007f436c005800 nid=0x3000 runnable [0x00007f43660df000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:602)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:587)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:229)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:204)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-11" prio=10 tid=0x00007f439001e000 nid=0x2fff in Object.wait() [0x00007f43661e0000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701be5e0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"ActiveMQ Transport: tcp:///10.6.155.205:61616" prio=10 tid=0x00007f4374017800 nid=0x2ffd runnable [0x00007f43662e1000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:602)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:587)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:229)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:204)
+	at java.lang.Thread.run(Thread.java:662)
+
+"ActiveMQ Transport: tcp:///10.6.155.205:61616" prio=10 tid=0x00007f436c003800 nid=0x2ffc runnable [0x00007f43663e2000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:602)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:587)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:229)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:204)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-30" prio=10 tid=0x00007f43c4030800 nid=0x2ffb waiting on condition [0x00007f43664e3000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-29" prio=10 tid=0x00007f43c402f000 nid=0x2ffa waiting on condition [0x00007f43665e4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-28" prio=10 tid=0x00007f43c402d800 nid=0x2ff9 waiting on condition [0x00007f43666e5000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-27" prio=10 tid=0x00007f43c402c000 nid=0x2ff8 waiting on condition [0x00007f43667e6000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-26" prio=10 tid=0x00007f43c402a800 nid=0x2ff7 waiting on condition [0x00007f43668e7000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-25" prio=10 tid=0x00007f43c4029000 nid=0x2ff6 waiting on condition [0x00007f43669e8000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-24" prio=10 tid=0x00007f43c4027800 nid=0x2ff4 waiting on condition [0x00007f4366bea000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-23" prio=10 tid=0x00007f43c4026000 nid=0x2ff0 waiting on condition [0x00007f4366ceb000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-22" prio=10 tid=0x00007f43c4024800 nid=0x2fef waiting on condition [0x00007f4366dec000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-21" prio=10 tid=0x00007f43c4023000 nid=0x2fee waiting on condition [0x00007f4366eed000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-20" prio=10 tid=0x00007f43c4021000 nid=0x2fed waiting on condition [0x00007f4366fee000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-19" prio=10 tid=0x00007f43c401f800 nid=0x2fec waiting on condition [0x00007f43670ef000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-18" prio=10 tid=0x00007f43c401e000 nid=0x2feb waiting on condition [0x00007f43671f0000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-17" prio=10 tid=0x00007f43c401c800 nid=0x2fea waiting on condition [0x00007f43672f1000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-16" prio=10 tid=0x00007f43c401b000 nid=0x2fe9 waiting on condition [0x00007f43673f2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-15" prio=10 tid=0x00007f43c4019800 nid=0x2fe8 waiting on condition [0x00007f43674f3000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-14" prio=10 tid=0x00007f43c4018000 nid=0x2fe7 waiting on condition [0x00007f43675f4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-13" prio=10 tid=0x00007f43c4016000 nid=0x2fe6 waiting on condition [0x00007f43676f5000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-12" prio=10 tid=0x00007f43c4014000 nid=0x2fe5 waiting on condition [0x00007f43677f6000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-11" prio=10 tid=0x00007f43c4012000 nid=0x2fe4 waiting on condition [0x00007f43678f7000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-10" prio=10 tid=0x00007f43c4010800 nid=0x2fe3 waiting on condition [0x00007f43679f8000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-9" prio=10 tid=0x00007f43c400f000 nid=0x2fe2 waiting on condition [0x00007f4367af9000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"mSkyTokenCache.data" prio=10 tid=0x00007f4394027800 nid=0x2fe1 waiting on condition [0x00007f4367bfa000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44701ad648> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:164)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:609)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:602)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-8" prio=10 tid=0x00007f43c400d800 nid=0x2fe0 waiting on condition [0x00007f4367cfb000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-7" prio=10 tid=0x00007f43c400c000 nid=0x2fdf waiting on condition [0x00007f4367dfc000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"net.sf.ehcache.CacheManager@e5fbbf3" daemon prio=10 tid=0x00007f4394080000 nid=0x2fde in Object.wait() [0x00007f4367efd000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00007f44702dde18> (a java.util.TaskQueue)
+	at java.lang.Object.wait(Object.java:485)
+	at java.util.TimerThread.mainLoop(Timer.java:483)
+	- locked <0x00007f44702dde18> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"pool-5-thread-6" prio=10 tid=0x00007f43c400a800 nid=0x2fdd waiting on condition [0x00007f4367ffe000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-5" prio=10 tid=0x00007f43c4009000 nid=0x2fdc waiting on condition [0x00007f43cc1b9000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-4" prio=10 tid=0x00007f43c4007000 nid=0x2fdb waiting on condition [0x00007f43cc2ba000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-3" prio=10 tid=0x00007f43c4005800 nid=0x2fda waiting on condition [0x00007f43cc3bb000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-2" prio=10 tid=0x00007f43c4004000 nid=0x2fd9 waiting on condition [0x00007f43cc4bc000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-5-thread-1" prio=10 tid=0x00007f43c4002800 nid=0x2fd8 waiting on condition [0x00007f43cc5bd000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f6d00> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-13" daemon prio=10 tid=0x00007f438c0d9000 nid=0x2fd7 waiting on condition [0x00007f43cc6be000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470346de8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at com.alisoft.xplatform.asf.cache.memcached.ClusterProcessor.process(ClusterProcessor.java:74)
+	at com.alisoft.xplatform.asf.cache.memcached.ClusterProcessor.run(ClusterProcessor.java:45)
+
+"pool-10-thread-1" prio=10 tid=0x00007f438c0d7000 nid=0x2fd6 waiting on condition [0x00007f43cc7bf000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702e1fb0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:164)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:609)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:602)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-12" daemon prio=10 tid=0x00007f438c0c2800 nid=0x2fd5 waiting on condition [0x00007f43cc8c0000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470349278> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at com.alisoft.xplatform.asf.cache.memcached.ClusterProcessor.process(ClusterProcessor.java:74)
+	at com.alisoft.xplatform.asf.cache.memcached.ClusterProcessor.run(ClusterProcessor.java:45)
+
+"pool-8-thread-1" prio=10 tid=0x00007f438c0c1800 nid=0x2fd4 waiting on condition [0x00007f43cc9c1000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702e9360> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:164)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:609)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:602)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-11" daemon prio=10 tid=0x00007f438c0d0800 nid=0x2fd3 waiting on condition [0x00007f43ccac2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470348128> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at com.alisoft.xplatform.asf.cache.memcached.ClusterProcessor.process(ClusterProcessor.java:74)
+	at com.alisoft.xplatform.asf.cache.memcached.ClusterProcessor.run(ClusterProcessor.java:45)
+
+"pool-6-thread-1" prio=10 tid=0x00007f438c0b8000 nid=0x2fd2 waiting on condition [0x00007f43ccbc3000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f44702f0208> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:164)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:609)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:602)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-10" daemon prio=10 tid=0x00007f438c04b000 nid=0x2fd1 waiting on condition [0x00007f43cccc4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470346bc0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at com.alisoft.xplatform.asf.cache.memcached.ClusterProcessor.process(ClusterProcessor.java:74)
+	at com.alisoft.xplatform.asf.cache.memcached.ClusterProcessor.run(ClusterProcessor.java:45)
+
+"pool-4-thread-1" prio=10 tid=0x00007f438c0e0000 nid=0x2fd0 waiting on condition [0x00007f43ccdc5000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470304498> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:164)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:609)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:602)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Timer-5" daemon prio=10 tid=0x00007f4374060000 nid=0x2fce in Object.wait() [0x00007f43ccec6000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x00007f4470337030> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"ActiveMQ Transport: tcp:///10.6.155.205:61616" prio=10 tid=0x00007f437400f800 nid=0x2fcd runnable [0x00007f43ccfc7000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:602)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:587)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:229)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:204)
+	at java.lang.Thread.run(Thread.java:662)
+
+"DestroyJavaVM" prio=10 tid=0x00007f456c014000 nid=0x2f73 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Timer-4" prio=10 tid=0x00007f456d36e800 nid=0x2fc9 in Object.wait() [0x00007f43cd1c9000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x00007f447034c560> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"listenerContainerMsgAck-5" prio=10 tid=0x00007f456d36d000 nid=0x2fc8 in Object.wait() [0x00007f43cd2ca000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701f0430> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-4" prio=10 tid=0x00007f456d168800 nid=0x2fc7 in Object.wait() [0x00007f43cd3cb000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701f4a50> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-3" prio=10 tid=0x00007f456d166800 nid=0x2fc6 in Object.wait() [0x00007f43cd4cc000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701f3700> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-2" prio=10 tid=0x00007f456d165000 nid=0x2fc5 in Object.wait() [0x00007f43cd5cd000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701e71f0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgAck-1" prio=10 tid=0x00007f456d163800 nid=0x2fc4 in Object.wait() [0x00007f43cd6ce000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701e5ea0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-10" prio=10 tid=0x00007f456d161800 nid=0x2fc3 in Object.wait() [0x00007f43cd7cf000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701da568> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-9" prio=10 tid=0x00007f456d160000 nid=0x2fc2 runnable [0x00007f43cd8d0000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.HashMap.addEntry(HashMap.java:753)
+	at java.util.HashMap.put(HashMap.java:385)
+	at cn.co.msky.core.db.dao.QueryDAO.doCreateRow(QueryDAO.java:85)
+	at cn.co.msky.core.db.dao.QueryDAO.execute(QueryDAO.java:309)
+	at cn.co.msky.core.db.dao.QueryDAO.execute(QueryDAO.java:210)
+	at com.travelsky.msky.user.login.dao.impl.UserRegDAO.getReginfoByUserID(UserRegDAO.java:339)
+	at com.travelsky.msky.user.service.impl.UserSVC.getUserDetailInfoByUserID(UserSVC.java:2145)
+	at com.travelsky.msky.msg.core.util.BasicUserInfoGetter.getUserInfoByUserId(BasicUserInfoGetter.java:776)
+	at com.travelsky.msky.msg.core.util.BasicUserInfoGetter.getAgentIdByUserId(BasicUserInfoGetter.java:723)
+	at com.travelsky.umetrip.messagecenter.handler.msghandler.TripMsgHandler.processTripMsg(TripMsgHandler.java:207)
+	at com.travelsky.umetrip.messagecenter.handler.consumer.UmeMessageConsumer.processPhoneMsg(UmeMessageConsumer.java:399)
+	at com.travelsky.umetrip.messagecenter.handler.consumer.UmeMessageConsumer.onMessage(UmeMessageConsumer.java:184)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:562)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:500)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:468)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:325)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-8" prio=10 tid=0x00007f456d15e000 nid=0x2fc1 in Object.wait() [0x00007f43cd9d1000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701b9988> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-7" prio=10 tid=0x00007f456d15c000 nid=0x2fc0 in Object.wait() [0x00007f43cdad2000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701c33d0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-6" prio=10 tid=0x00007f456d15a000 nid=0x2fbf runnable [0x00007f43cdbd2000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at oracle.net.ns.Packet.receive(Unknown Source)
+	at oracle.net.ns.DataPacket.receive(Unknown Source)
+	at oracle.net.ns.NetInputStream.getNextPacket(Unknown Source)
+	at oracle.net.ns.NetInputStream.read(Unknown Source)
+	at oracle.net.ns.NetInputStream.read(Unknown Source)
+	at oracle.net.ns.NetInputStream.read(Unknown Source)
+	at oracle.jdbc.driver.T4CMAREngine.unmarshalUB1(T4CMAREngine.java:1104)
+	at oracle.jdbc.driver.T4CMAREngine.unmarshalSB1(T4CMAREngine.java:1075)
+	at oracle.jdbc.driver.T4C8Oall.receive(T4C8Oall.java:480)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:219)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:813)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1049)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeMaybeDescribe(T4CPreparedStatement.java:854)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1154)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3370)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3415)
+	- locked <0x00007f45165d3c20> (a oracle.jdbc.driver.T4CPreparedStatement)
+	- locked <0x00007f44710a4638> (a oracle.jdbc.driver.T4CConnection)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at cn.co.msky.core.db.dao.QueryDAO.execute(QueryDAO.java:295)
+	at cn.co.msky.core.db.dao.QueryDAO.execute(QueryDAO.java:210)
+	at com.travelsky.msky.cert.dao.impl.UserCertDAO.getUserCertInfoByUserID(UserCertDAO.java:139)
+	at com.travelsky.msky.reconstruction.dao.impl.UserDetailInfoDAO.getUserDetailInfoByUserID(UserDetailInfoDAO.java:96)
+	at com.travelsky.msky.user.service.impl.UserSVC.getUserDetailInfoByUserID(UserSVC.java:2179)
+	at com.travelsky.msky.msg.core.util.BasicUserInfoGetter.getUserInfoByUserId(BasicUserInfoGetter.java:776)
+	at com.travelsky.msky.msg.core.util.BasicUserInfoGetter.getAgentIdByUserId(BasicUserInfoGetter.java:723)
+	at com.travelsky.umetrip.messagecenter.handler.msghandler.TripMsgHandler.processTripMsg(TripMsgHandler.java:207)
+	at com.travelsky.umetrip.messagecenter.handler.consumer.UmeMessageConsumer.processPhoneMsg(UmeMessageConsumer.java:399)
+	at com.travelsky.umetrip.messagecenter.handler.consumer.UmeMessageConsumer.onMessage(UmeMessageConsumer.java:184)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:562)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:500)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:468)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:325)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-5" prio=10 tid=0x00007f456d0d5800 nid=0x2fbe in Object.wait() [0x00007f43cdcd4000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701c8020> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-4" prio=10 tid=0x00007f456d0d4000 nid=0x2fbd in Object.wait() [0x00007f43cddd5000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701cf5d0> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-3" prio=10 tid=0x00007f456d0fe800 nid=0x2fbc in Object.wait() [0x00007f43cded6000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f447019cec8> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-2" prio=10 tid=0x00007f456d0fd800 nid=0x2fbb in Object.wait() [0x00007f43cdfd7000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701d4f60> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"listenerContainerMsgMain-1" prio=10 tid=0x00007f456c0d6800 nid=0x2fba in Object.wait() [0x00007f43ce0d8000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.apache.activemq.SimplePriorityMessageDispatchChannel.dequeue(SimplePriorityMessageDispatchChannel.java:89)
+	- locked <0x00007f44701d3918> (a java.lang.Object)
+	at org.apache.activemq.ActiveMQMessageConsumer.dequeue(ActiveMQMessageConsumer.java:468)
+	at org.apache.activemq.ActiveMQMessageConsumer.receive(ActiveMQMessageConsumer.java:592)
+	at org.springframework.jms.connection.CachedMessageConsumer.receive(CachedMessageConsumer.java:74)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveMessage(AbstractPollingMessageListenerContainer.java:430)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:310)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1103)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1095)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:992)
+	at java.lang.Thread.run(Thread.java:662)
+
+"ActiveMQ Transport: tcp:///10.6.155.205:61616" prio=10 tid=0x00007f436c001800 nid=0x2fb9 runnable [0x00007f43ce1d9000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:602)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:587)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:229)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:204)
+	at java.lang.Thread.run(Thread.java:662)
+
+"main-EventThread" daemon prio=10 tid=0x00007f456cfa1800 nid=0x2fb8 waiting on condition [0x00007f43ce2da000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f4470018e50> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:498)
+
+"main-SendThread(vm-kvm2040-jbs:2183)" daemon prio=10 tid=0x00007f456d1fa000 nid=0x2fb7 runnable [0x00007f43ce3db000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:210)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:65)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	- locked <0x00007f44700687b0> (a sun.nio.ch.Util$1)
+	- locked <0x00007f4470068798> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x00007f44700683c0> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1131)
+
+"InactivityMonitor WriteCheck" daemon prio=10 tid=0x00007f4368003000 nid=0x2fb6 in Object.wait() [0x00007f43ce5e4000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x00007f4470068d08> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"InactivityMonitor ReadCheck" daemon prio=10 tid=0x00007f4368001800 nid=0x2fb5 in Object.wait() [0x00007f43ce6e5000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x00007f44700810e0> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"ActiveMQ Transport: tcp:///10.6.155.205:61616" prio=10 tid=0x00007f4374002800 nid=0x2fb3 runnable [0x00007f43ce8e7000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:602)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:587)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:229)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:204)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Timer-3" prio=10 tid=0x00007f456c0e1000 nid=0x2fb1 in Object.wait() [0x00007f43ceae9000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x00007f447000a920> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"Timer-2" prio=10 tid=0x00007f456c0df000 nid=0x2fb0 in Object.wait() [0x00007f43cebea000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x00007f447000a268> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"Timer-1" prio=10 tid=0x00007f456c0dd000 nid=0x2faf in Object.wait() [0x00007f43ceceb000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x00007f4470009bb8> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"Timer-0" prio=10 tid=0x00007f456c0db000 nid=0x2fae in Object.wait() [0x00007f43cedec000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x00007f44700093d8> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c13f800 nid=0x2fad waiting on condition [0x00007f43ceeed000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c13e000 nid=0x2fac waiting on condition [0x00007f43cefee000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c13c800 nid=0x2fab waiting on condition [0x00007f43cf0ef000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c13a800 nid=0x2faa waiting on condition [0x00007f43cf1f0000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c139000 nid=0x2fa9 waiting on condition [0x00007f43cf2f1000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c069800 nid=0x2fa8 waiting on condition [0x00007f43cf3f2000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c067800 nid=0x2fa7 waiting on condition [0x00007f43cf4f3000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c065800 nid=0x2fa5 waiting on condition [0x00007f43cf5f4000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c063800 nid=0x2fa4 waiting on condition [0x00007f43cf6f5000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c19c800 nid=0x2fa3 waiting on condition [0x00007f43cf7f6000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c19a800 nid=0x2fa2 waiting on condition [0x00007f43cf8f7000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c198800 nid=0x2fa1 waiting on condition [0x00007f43cf9f8000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c196800 nid=0x2fa0 waiting on condition [0x00007f43cfaf9000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c166000 nid=0x2f9f waiting on condition [0x00007f43cfbfa000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c164800 nid=0x2f9e waiting on condition [0x00007f43cfcfb000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c163000 nid=0x2f9d waiting on condition [0x00007f43cfdfc000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c161800 nid=0x2f9c waiting on condition [0x00007f43cfefd000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456c160000 nid=0x2f9b waiting on condition [0x00007f43cfffe000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456d369800 nid=0x2f9a waiting on condition [0x00007f443410b000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456d367800 nid=0x2f99 waiting on condition [0x00007f443420c000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456d366000 nid=0x2f98 waiting on condition [0x00007f443430d000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456cf16800 nid=0x2f97 waiting on condition [0x00007f443440e000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456ce0a800 nid=0x2f96 waiting on condition [0x00007f443450f000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456ceb5000 nid=0x2f95 waiting on condition [0x00007f4434610000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456ce75800 nid=0x2f94 waiting on condition [0x00007f4434711000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456ce30000 nid=0x2f93 waiting on condition [0x00007f4434812000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456d14a000 nid=0x2f92 waiting on condition [0x00007f4434913000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456d16f800 nid=0x2f90 waiting on condition [0x00007f4434a14000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456d17b000 nid=0x2f8f waiting on condition [0x00007f4434b15000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456d17a800 nid=0x2f8e waiting on condition [0x00007f4434c16000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456cfe2800 nid=0x2f8d waiting on condition [0x00007f4434f1d000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456cd48800 nid=0x2f8c waiting on condition [0x00007f443501e000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456ce63800 nid=0x2f8b waiting on condition [0x00007f443511f000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456ce16000 nid=0x2f8a waiting on condition [0x00007f4435220000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"JavaPNS grouped notification thread in QUEUE mode" daemon prio=10 tid=0x00007f456d1ff800 nid=0x2f89 waiting on condition [0x00007f4435321000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at javapns.notification.transmission.NotificationThread.runQueue(NotificationThread.java:398)
+	at javapns.notification.transmission.NotificationThread.run(NotificationThread.java:219)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-2-thread-1" prio=10 tid=0x00007f456ce44000 nid=0x2f86 waiting on condition [0x00007f4435539000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f446fc69da0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:164)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:609)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:602)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-1" prio=10 tid=0x00007f456cd14800 nid=0x2f85 waiting on condition [0x00007f443563a000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f446fc6d558> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at com.taobao.diamond.io.watch.WatchService.take(WatchService.java:148)
+	at com.taobao.diamond.client.processor.LocalConfigInfoProcessor$1.run(LocalConfigInfoProcessor.java:158)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-3-thread-1" prio=10 tid=0x00007f456cd5e000 nid=0x2f84 waiting on condition [0x00007f443573b000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00007f446fc6f4b8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:164)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:609)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:602)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Low Memory Detector" daemon prio=10 tid=0x00007f456c0af000 nid=0x2f82 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread1" daemon prio=10 tid=0x00007f456c0ac800 nid=0x2f81 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread0" daemon prio=10 tid=0x00007f456c0aa000 nid=0x2f80 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" daemon prio=10 tid=0x00007f456c0a8000 nid=0x2f7f runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" daemon prio=10 tid=0x00007f456c07e800 nid=0x2f7e in Object.wait() [0x00007f446835c000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x00007f446fc6ff60> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+"Reference Handler" daemon prio=10 tid=0x00007f456c07c800 nid=0x2f7d in Object.wait() [0x00007f446845d000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x00007f446fbf5808> (a java.lang.ref.Reference$Lock)
+
+"VM Thread" prio=10 tid=0x00007f456c078800 nid=0x2f7c runnable 
+
+"GC task thread#0 (ParallelGC)" prio=10 tid=0x00007f456c026800 nid=0x2f74 runnable 
+
+"GC task thread#1 (ParallelGC)" prio=10 tid=0x00007f456c028800 nid=0x2f75 runnable 
+
+"GC task thread#2 (ParallelGC)" prio=10 tid=0x00007f456c02a000 nid=0x2f76 runnable 
+
+"GC task thread#3 (ParallelGC)" prio=10 tid=0x00007f456c02c000 nid=0x2f77 runnable 
+
+"GC task thread#4 (ParallelGC)" prio=10 tid=0x00007f456c02d800 nid=0x2f78 runnable 
+
+"GC task thread#5 (ParallelGC)" prio=10 tid=0x00007f456c02f800 nid=0x2f79 runnable 
+
+"GC task thread#6 (ParallelGC)" prio=10 tid=0x00007f456c031800 nid=0x2f7a runnable 
+
+"GC task thread#7 (ParallelGC)" prio=10 tid=0x00007f456c033000 nid=0x2f7b runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x00007f456c0c2000 nid=0x2f83 waiting on condition 
+
+JNI global references: 892
+
